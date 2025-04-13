@@ -1,7 +1,7 @@
 class Company < ApplicationRecord
   has_many :emissions
 
-  EMISSION_MULTIPLIER = {'electricity' => 3, 'gaz' => 14, 'gazoil' => 5}.freeze
+  EMISSION_MULTIPLIER = {'electricity' => 3, 'gaz' => 14, 'fuel' => 5}.freeze
 
   def calculate_emission
     emissions.sum{ |emission| emission.emission_quantity * EMISSION_MULTIPLIER[emission.emission_type] }
