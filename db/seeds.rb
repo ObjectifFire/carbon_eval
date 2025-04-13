@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+company = Company.new(name: "Total", siret: "123456789010")
+company.save!
+company = Company.first
+(1..25).each do |n|
+  type = rand(0..2)
+  quantity = rand(5..99)
+  emission = Emission.new(emission_type: type, emission_quantity: quantity, company: company)
+  emission.save!
+end

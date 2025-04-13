@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :company do
-    name { "MyString" }
-    siret { "MyString" }
-    total_emissions { "9.99" }
+    name { "Frist_company" }
+    siret { "123456788" }
+    total_emissions { nil }
   end
 end
